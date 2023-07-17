@@ -142,21 +142,21 @@ data.forEach((item) => {
                   </span>
                 </button>
                 <div class="gridItem__info-box">
-                  <button class="button button--ico">
+                  <a href="#" class="button button--ico">
                     <span class="ico">
                       <img src="./images/icons/globus.png" alt="">
                     </span>
-                  </button>
-                  <button class="button button--ico">
+                  </a>
+                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
                     <span class="ico">
                       <img src="./images/icons/discord.png" alt="">
                     </span>
-                  </button>
-                  <button class="button button--ico">
+                  </a>
+                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
                     <span class="ico">
                       <img src="./images/icons/twitter.png" alt="">
                     </span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

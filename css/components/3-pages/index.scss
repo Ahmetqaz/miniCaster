@@ -20,7 +20,7 @@
       position: relative;
       padding: 10px;
       background: $gray-2;
-      .ratioImage{
+      .ratioImage {
         // filter: grayscale(1);
       }
       &-info {
@@ -243,21 +243,18 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease-in-out;
+  display: flex;
   &__inner {
-    position: absolute;
     width: 100%;
-    height: 100%;
     padding: 30px 20px;
-    top: 0;
-    left: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
     overflow: auto;
     &-item {
       opacity: 0;
       pointer-events: none;
       transition: 0.3s ease-in-out;
+      margin: auto 0;
       &.active {
         opacity: 1;
         pointer-events: all;
