@@ -20,6 +20,9 @@
       position: relative;
       padding: 10px;
       background: $gray-2;
+      .ratioImage{
+        // filter: grayscale(1);
+      }
       &-info {
         font-weight: 500;
         background: $primary;
@@ -132,6 +135,15 @@
         }
       }
     }
+    &:nth-child(1) {
+      order: -2;
+    }
+    &:nth-child(2) {
+      order: -2;
+    }
+    &:nth-child(3) {
+      order: -2;
+    }
   }
   &Advertsiment {
     width: 100%;
@@ -139,6 +151,7 @@
     flex-direction: column;
     gap: 35px;
     margin-top: 10px;
+    order: -1;
     &__container {
       display: flex;
       flex-direction: column;
@@ -472,10 +485,13 @@
     &Item {
       width: calc(50% - 10px);
       &:nth-child(1) {
-        order: -3;
+        order: -2;
       }
       &:nth-child(2) {
         order: -2;
+      }
+      &:nth-child(3) {
+        order: 0;
       }
     }
     &Advertsiment {

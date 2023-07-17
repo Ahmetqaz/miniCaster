@@ -597,8 +597,16 @@
 }
 
 @mixin components-1024 {
+  .main {
+    padding-top: 120px;
+  }
   .button {
     font-size: 14px;
+  }
+}
+@mixin components-940 {
+  .main {
+    padding-top: 90px;
   }
 }
 @mixin components-650 {

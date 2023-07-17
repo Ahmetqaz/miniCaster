@@ -20,8 +20,10 @@
     padding: 0 25px;
   }
   @include typography-940;
+  @include components-940;
   @include header-940;
   @include index-940;
+
 }
 @media (max-width: 768px) {
   .autoContainer {

@@ -36,35 +36,7 @@ if (header)
 ///
 ///
 /// tabEvents
-const toggleBody = (isClosed) => {
-  if (isClosed) {
-    document.body.classList.add("active");
-    if (menu) closeMenu();
-  } else {
-    document.body.classList.remove("active");
-  }
-};
-document.querySelectorAll(`[data-event="tabEvent"]`).forEach((eventBtn) => {
-  const tab = document.querySelector(eventBtn.getAttribute("data-tab"));
-  if (tab) {
-    eventBtn.onclick = (e) => {
-      e.preventDefault();
-      tab.classList.toggle("active");
-      toggleBody(tab.classList.contains("active"));
-    };
-    tab.onclick = (e) => {
-      if (e.target === e.currentTarget) {
-        tab.classList.toggle("active");
-        toggleBody(tab.classList.contains("active"));
-      }
-    };
-  }
-});
-document.querySelectorAll(`[data-toggle]`).forEach((toggleBtn) => {
-  console.log("btn ->");
-  toggleBtn.onclick = () =>
-    toggleBtn.classList.toggle(toggleBtn.getAttribute("data-toggle"));
-});
+
 ///
 ///
 ///
@@ -102,3 +74,92 @@ document.querySelectorAll(`[data-toggle]`).forEach((toggleBtn) => {
 //     }
 //   });
 // }
+
+const gridBody = document.getElementById("gridBody");
+const data = [
+  {
+    imageSource: "./images/grid-image.png",
+    imageDate: "added",
+    title: "CryptoCommas",
+    "subTitle-1": "Chain: Polygon",
+    "subTitle-2": "Supply: 999",
+    "subTitle-3": "Price: 9 MATIC",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornarelorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornareeros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nullam non ornare eros.",
+    buttonText: "Mint Here",
+  },
+  {
+    imageSource: "./images/grid-image.png",
+    imageDate: "added",
+    title: "CryptoCommas",
+    "subTitle-1": "Chain: Polygon",
+    "subTitle-2": "Supply: 999",
+    "subTitle-3": "Price: 9 MATIC",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornarelorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornareeros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nullam non ornare eros.",
+    buttonText: "Mint Here",
+  },
+  {
+    imageSource: "./images/grid-image.png",
+    imageDate: "added",
+    title: "CryptoCommas",
+    "subTitle-1": "Chain: Polygon",
+    "subTitle-2": "Supply: 999",
+    "subTitle-3": "Price: 9 MATIC",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornarelorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornareeros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nullam non ornare eros.",
+    buttonText: "Mint Here",
+  },
+];
+
+data.forEach((item) => {
+  gridBody.innerHTML += `
+<div class="gridItem">
+              <div class="gridItem__image">
+                <div class="ratioImage ratioImage--contain">
+                  <img src="${item.imageSource}" alt="">
+                </div>
+                <h6 class="gridItem__image-info _sm">
+                ${item.imageDate}
+                </h6>
+              </div>
+              <div class="gridItem__info">
+                <h5 class="gridItem__info-title">
+                ${item.title}
+                </h5>
+                <h6 class="gridItem__info-subtitle _sm">
+                ${item["subTitle-1"]}
+                </h6>
+                <h6 class="gridItem__info-subtitle _sm">
+                ${item["subTitle-2"]}
+                </h6>
+                <h6 class="gridItem__info-subtitle _sm">
+                ${item["subTitle-3"]}
+                </h6>
+                <p class="gridItem__info-text">
+                ${item.text}
+                </p>
+                <button class="button button--secondary">
+                  <span class="text">
+                  ${item.buttonText}
+                  </span>
+                </button>
+                <div class="gridItem__info-box">
+                  <button class="button button--ico">
+                    <span class="ico">
+                      <img src="./images/icons/globus.png" alt="">
+                    </span>
+                  </button>
+                  <button class="button button--ico">
+                    <span class="ico">
+                      <img src="./images/icons/discord.png" alt="">
+                    </span>
+                  </button>
+                  <button class="button button--ico">
+                    <span class="ico">
+                      <img src="./images/icons/twitter.png" alt="">
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+`;
+});
+console.log(data);
