@@ -30,7 +30,7 @@
       }
     }
     &__info {
-      padding: 10px;
+      padding: 10px 26px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -48,7 +48,8 @@
         font-weight: 500;
       }
       &-text {
-        line-height: 1.6em;
+        line-height: 1.55em;
+        @include ellipsis;
       }
       .button {
         &--primary {
@@ -621,6 +622,9 @@
       }
     }
     &Item {
+      &__info {
+        padding: 10px 20px;
+      }
       &._modal {
         .grid {
           &Item {
