@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 0;
-  z-index: 1;
+  padding: 35px 0;
+  z-index: 5;
   transition: 0.2s ease-out;
   transition-property: opacity, transform, padding;
 
@@ -12,9 +12,27 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 30px;
     z-index: 2;
-
+    &-logo {
+      width: 235px;
+      transition: 0.3s ease;
+      .logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      &:hover {
+        opacity: 0.8;
+        transform: scale(0.95);
+      }
+    }
     .burger {
       display: none;
     }
@@ -22,9 +40,18 @@
 
   &.sticky {
     position: fixed;
-    padding: 20px 0;
+    padding: 15px 0;
     animation: 0.3s sticky ease-in;
     transition-duration: 0.5s;
+    background: $black;
+    border-bottom: 2px solid $primary;
+    .header {
+      &__inner {
+        &-logo {
+          width: 180px;
+        }
+      }
+    }
   }
 }
 .nav {
@@ -33,55 +60,11 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     &-group {
       display: flex;
       align-items: center;
-    }
-    &-link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 8px 20px;
-      //font
-      color: $white;
-      font-family: $font-primary;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1;
-      transition: 0.3s ease-out;
-
-      &._sm {
-        padding: 5px 10px;
-      }
-      svg {
-        width: 1.5em;
-        height: 1.5em;
-        margin-right: 0.7em;
-      }
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: -3px;
-        left: 50%;
-        height: 0;
-        width: 60%;
-        background: $primary;
-        opacity: 0;
-        transition: 0.3s ease-out;
-        transform: translateX(-50%);
-      }
-      &:hover {
-        color: $primary;
-
-        &:after {
-          opacity: 1;
-          height: 2px;
-          width: 80%;
-        }
-      }
+      gap: 10px;
     }
   }
 }
@@ -92,10 +75,9 @@
   font-size: 10px;
   width: 2.6em;
   height: 2em;
-  color: $white;
+  color: $primary;
   background: transparent;
   transition: 0.2s ease;
-
   span,
   &::after,
   &::before {
@@ -145,21 +127,38 @@
   }
 }
 
-@mixin header-1025 {
+@mixin header-1024 {
   .header {
-    padding: 25px 0;
-
+    padding: 20px 0;
+    &__inner {
+      &-logo {
+        width: 190px;
+      }
+    }
+  }
+}
+@mixin header-940 {
+  .header {
     &__inner {
       justify-content: space-between;
-
       &-logo {
-        padding-right: 20px;
-        border-right: 2px solid rgba($white, 0.27);
-        border: 0;
+        width: 160px;
       }
       .burger {
         display: block;
         z-index: 2;
+      }
+      .button{
+        width: 100%;
+      }
+    }
+    &.sticky {
+      .header {
+        &__inner {
+          &-logo {
+            width: 150px;
+          }
+        }
       }
     }
   }
@@ -181,49 +180,33 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 35%;
-      min-width: 280px;
+      width: 27%;
+      min-width: 240px;
       height: 100%;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       box-sizing: border-box;
-      background: $white;
+      background: $black;
       box-shadow: 0px 4px 24px -1px rgba($black, 0.2);
       padding: 50px 25px;
       transform: translate(-100%);
       opacity: 0;
       transition: 0.15s ease-in-out 0s;
-
+      border: 1px solid $primary;
+      border-left: unset;
       &-group {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         padding: 25px 0;
-        gap: 8px;
+        gap: 20px;
         color: $black;
         border-top: 1px solid $white;
         width: 100%;
 
         &:first-child {
           border: 0;
-        }
-      }
-      &-link {
-        color: $black;
-
-        &:after {
-          left: 0;
-          top: 50%;
-          width: 2px;
-          height: 80%;
-          transform: translateY(-50%);
-        }
-
-        &:hover {
-          &:after {
-            width: 2px;
-            height: 100%;
-          }
         }
       }
     }
@@ -239,6 +222,44 @@
         transition: 0.3s ease-in-out 0.05s;
         transform: translate(0);
       }
+    }
+  }
+}
+@mixin header-580 {
+  .header {
+    &__inner {
+      &-logo {
+        width: 130px;
+      }
+    }
+    &.sticky {
+      .header {
+        &__inner {
+          &-logo {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    &__inner {
+      padding: 40px 20px;
+    }
+  }
+  .burger {
+    width: 20px;
+    height: 14px;
+    span,
+    &::after,
+    &::before {
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 0.4em;
+      transition: all 0.3s ease;
     }
   }
 }

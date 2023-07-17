@@ -3,6 +3,7 @@
   flex-direction: column;
   overflow: hidden;
   min-height: 100%;
+  padding-top: 160px;
 }
 .autoContainer {
   max-width: 1230px;
@@ -29,24 +30,83 @@
     background: $gradient-1;
     color: $white;
     border-radius: 0.625em;
+    background-size: 200% 100%;
+    background-position: 50%;
     &:hover {
+      opacity: 0.8;
+      background-position: 80%;
     }
-  }
-  &--text {
   }
   &--secondary {
     font-size: 14px;
-    background: $gradient-2;
     border-radius: 1.28em;
     padding: 0.74em 1.5em;
+    position: relative;
+    background-size: 200% 100%;
+    background-position: 50%;
+    background: $gradient-2;
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+    &::after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $gradient-2;
+      transition: all 0.3s ease;
+      border-radius: inherit;
+      opacity: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+      background-position: 80%;
+    }
+  }
+  &--text {
+    padding: 0.9em 1.2em;
+    border-radius: 0.625em;
+    &._primary {
+      color: $primary;
+    }
+    &._lg {
+      padding: unset;
+      color: $primary;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    &:hover {
+      border-color: $white;
+      &._primary {
+        border-color: transparent;
+        color: $red;
+      }
+      &._lg {
+        border-color: transparent;
+        color: $red;
+      }
+    }
   }
   &--ico {
-    height: 14px;
-    padding:1.5em 1em;
+    padding: unset;
     position: relative;
+    height: 14px;
+    .ico {
+      height: 100%;
+    }
     img {
       height: 100%;
       object-fit: contain;
+    }
+    &._lg {
+      height: 18px;
+    }
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.1);
     }
   }
   &--border {
@@ -55,6 +115,24 @@
     border: 3px solid $primary;
     color: $primary;
     padding: 0.47em 0.8em;
+    position: relative;
+    &::after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $primary;
+      transition: all 0.3s ease;
+      border-radius: inherit;
+      opacity: 0;
+    }
+    &:hover {
+      &::after {
+        opacity: 0.3;
+      }
+    }
   }
 
   &:active {
@@ -65,7 +143,6 @@
     opacity: 0.5 !important;
   }
 }
-
 .input {
   display: flex;
   width: 100%;
@@ -237,9 +314,8 @@
 }
 .ratioImage {
   position: relative;
-  padding-bottom: 65%;
+  padding-bottom: 59%;
   width: 100%;
-
   img {
     position: absolute;
     top: 0;
@@ -518,4 +594,15 @@
 }
 .noBreak {
   white-space: nowrap;
+}
+
+@mixin components-1024 {
+  .button {
+    font-size: 14px;
+  }
+}
+@mixin components-650 {
+  .button {
+    font-weight: 500;
+  }
 }

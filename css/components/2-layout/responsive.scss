@@ -5,27 +5,44 @@
     padding: 0 40px;
   }
 }
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .autoContainer {
     padding: 0 30px;
   }
-  @include header-1025;
+  @include components-1024;
+  @include typography-1024;
+  @include header-1024;
+  @include index-1024;
 }
 
 @media (max-width: 940px) {
   .autoContainer {
     padding: 0 25px;
   }
+  @include typography-940;
+  @include header-940;
+  @include index-940;
 }
 @media (max-width: 768px) {
   .autoContainer {
     padding: 0 15px;
   }
+  @include footer-768;
+  @include index-768;
+}
+@media (max-width: 650px) {
+  @include components-650;
+  @include typography-650;
+  @include index-650;
 }
 @media (max-width: 580px) {
   ._hideMob {
     display: none;
   }
+  @include header-580;
+  @include index-580;
 }
 @media (max-width: 460px) {
+  @include footer-460;
+  @include index-460;
 }

@@ -142,9 +142,15 @@ h4 {
 }
 h5 {
   font-size: 18px;
+  &._sm {
+    font-size: 16px;
+  }
 }
 h6 {
   font-size: 16px;
+  &._sm {
+    font-size: 14px;
+  }
 }
 h1,
 h2,
@@ -162,5 +168,31 @@ p {
   line-height: 1.8em;
   &._lg {
     font-size: 16px;
+  }
+}
+@mixin typography-1024 {
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  p {
+    &._lg {
+      font-size: 14px;
+    }
+  }
+}
+@mixin typography-940 {
+  h2 {
+    font-size: 35px;
+  }
+}
+@mixin typography-650 {
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 25px;
   }
 }

@@ -1,6 +1,38 @@
 /// section footer
 .footer {
   margin-top: auto;
+  padding: 40px 0;
   &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    &-copy {
+      font-weight: 500;
+    }
+  }
+}
+@mixin footer-768 {
+  .footer {
+    padding: 30px 0;
+  }
+}
+@mixin footer-460 {
+  .footer {
+    padding: 20px 0;
+    &__inner {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      &-copy {
+        order: 1;
+        text-align: center;
+      }
+    }
   }
 }
