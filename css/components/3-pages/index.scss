@@ -1,3 +1,13 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .grid {
   font-size: 30px;
   &__inner {
@@ -23,6 +33,20 @@
       .ratioImage {
         // filter: grayscale(1);
       }
+      &-date {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        display: flex;
+        gap: 5px;
+        .date {
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 5px;
+          padding: 3px 7px;
+          background: #351024;
+        }
+      }
       &-info {
         font-weight: 500;
         background: $primary;
@@ -38,7 +62,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 13px;
       &-box {
         display: flex;
         align-items: center;
@@ -52,7 +76,10 @@
       }
       &-text {
         line-height: 1.55em;
-        @include ellipsis;
+
+        &:not(._full) {
+          @include ellipsis;
+        }
       }
       .button {
         &--primary {
@@ -100,20 +127,6 @@
                 color: $primary;
               }
             }
-            &-date {
-              position: absolute;
-              right: 5px;
-              bottom: 5px;
-              display: flex;
-              gap: 5px;
-              .date {
-                font-size: 14px;
-                font-weight: 600;
-                border-radius: 5px;
-                padding: 3px 7px;
-                background: #351024;
-              }
-            }
           }
           &__info {
             background: $white;
@@ -129,20 +142,11 @@
             }
             &-text {
               color: $black;
-              text-align: left;
+              text-align: justify;
             }
           }
         }
       }
-    }
-    &:nth-child(1) {
-      order: -2;
-    }
-    &:nth-child(2) {
-      order: -2;
-    }
-    &:nth-child(3) {
-      order: -2;
     }
   }
   &Advertsiment {
@@ -151,7 +155,7 @@
     flex-direction: column;
     gap: 35px;
     margin-top: 10px;
-    order: -1;
+
     &__container {
       display: flex;
       flex-direction: column;
@@ -233,6 +237,7 @@
   }
 }
 .popUp {
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -240,10 +245,8 @@
   left: 0;
   z-index: 5;
   background-color: rgba(#000, 0.8);
-  opacity: 0;
-  pointer-events: none;
   transition: 0.3s ease-in-out;
-  display: flex;
+
   &__inner {
     width: 100%;
     padding: 30px 20px;
@@ -251,10 +254,9 @@
     justify-content: center;
     overflow: auto;
     &-item {
-      opacity: 0;
-      pointer-events: none;
       transition: 0.3s ease-in-out;
-      margin: auto 0;
+      margin: auto;
+      animation: 0.3s ease fadeInUp;
       &.active {
         opacity: 1;
         pointer-events: all;
@@ -262,8 +264,7 @@
     }
   }
   &.active {
-    opacity: 1;
-    pointer-events: all;
+    display: flex;
   }
 }
 .price {
@@ -436,6 +437,13 @@
     }
   }
 }
+.collapse {
+  display: none;
+  animation: 0.3s collapse ease-out;
+  &.active {
+    display: flex;
+  }
+}
 
 @mixin index-1024 {
   .grid {
@@ -476,23 +484,12 @@
     &__inner {
       &-row {
         gap: 25px 15px;
-        justify-content: space-between;
+        justify-content: space-around;
       }
     }
     &Item {
       width: calc(50% - 10px);
-      &:nth-child(1) {
-        order: -2;
-      }
-      &:nth-child(2) {
-        order: -2;
-      }
-      &:nth-child(3) {
-        order: 0;
-      }
-    }
-    &Advertsiment {
-      order: -1;
+      max-width: 390px;
     }
   }
   .price {
@@ -503,6 +500,10 @@
 }
 @mixin index-768 {
   .grid {
+    &__inner {
+      &-row {
+      }
+    }
     &Advertsiment {
       &__container {
         &-image {

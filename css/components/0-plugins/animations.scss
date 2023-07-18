@@ -70,6 +70,8 @@
 }
 
 .zoomInCenter {
-  animation-name: zoomInCenter;
-  animation-timing-function: ease-in-out;
+  animation: zoomInCenter 0.3s ease;
+}
+.zoomIn {
+  animation: zoomIn 0.3s ease;
 }

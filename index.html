@@ -1,233 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- <link rel="icon" href="images/logo-small.svg" /> -->
+    <title>Home</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/main.css" />
-  <!-- <link rel="icon" href="images/logo-small.svg" /> -->
-  <title>Home</title>
-</head>
-
-<body>
-  <div class="main">
-    <!-- #header -->
-    <header class="header" id="header">
-      <div class="autoContainer">
-        <div class="header__inner">
-          <a href="/" class="header__inner-logo">
-            <span class="logo">
-              <img src="images/logo.png" alt="logo" />
-            </span>
-          </a>
-          <div class="nav" id="menu">
-            <div class="nav__inner">
-              <div class="nav__inner-group">
-                <button class="button button--text">
-                  WHITELIST MARKET
-                </button>
-                <button class="button button--primary">
-                  <span class="text">
-                    Submit NFT Drop
-                  </span>
-                </button>
+  <body>
+    <div class="main">
+      <!-- #header -->
+      <header class="header" id="header">
+        <div class="autoContainer">
+          <div class="header__inner">
+            <a href="/" class="header__inner-logo">
+              <span class="logo">
+                <img src="images/logo.png" alt="logo" />
+              </span>
+            </a>
+            <div class="nav" id="menu">
+              <div class="nav__inner">
+                <div class="nav__inner-group">
+                  <button class="button button--text">WHITELIST MARKET</button>
+                  <button class="button button--primary">
+                    <span class="text"> Submit NFT Drop </span>
+                  </button>
+                </div>
               </div>
             </div>
+            <button class="burger" id="menuBtn">
+              <span></span>
+            </button>
           </div>
-          <button class="burger" id="menuBtn">
-            <span></span>
-          </button>
         </div>
-      </div>
-    </header>
-    <!-- #header end -->
-    <!-- #grid -->
-    <section class="grid">
-      <div class="autoContainer">
-        <div class="grid__inner">
-          <h3>
-            FEATURED NFT DROPS
-          </h3>
-          <div class="grid__inner-row" id="gridBody">
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+      </header>
+      <!-- #header end -->
+      <!-- #grid -->
+      <section class="grid" id="wrapper">
+        <div class="autoContainer">
+          <div class="grid__inner">
+            <h3>FEATURED NFT DROPS</h3>
+            <div class="grid__inner-row" id="featured">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="gridAdvertsiment">
               <div class="gridAdvertsiment__container">
-                <h2>
-                  Stake to Earn
-                </h2>
+                <h2>Stake to Earn</h2>
                 <p class="_lg">
-                  Earn MATIC on MintCaster.xyz by owning and staking CryptoCommas NFTs.
-                  Payments will be distributed equally among staked Commas.
+                  Earn MATIC on MintCaster.xyz by owning and staking
+                  CryptoCommas NFTs. Payments will be distributed equally among
+                  staked Commas.
                 </p>
                 <div class="gridAdvertsiment__container-group">
                   <button class="button button--primary">
-                    <span class="text">
-                      Get Your Commas
-                    </span>
+                    <span class="text"> Get Your Commas </span>
                   </button>
                   <button class="button button--primary">
-                    <span class="text">
-                      Stake Your Commas
-                    </span>
+                    <span class="text"> Stake Your Commas </span>
                   </button>
                   <button class="button button--text _primary">
                     WHITEPAPER
@@ -235,448 +215,739 @@
                 </div>
                 <div class="gridAdvertsiment__container-bg">
                   <div class="gridAdvertsiment__container-image">
-                    <img src="./images/advertising/1.png" alt="">
+                    <img src="./images/advertising/1.png" alt="" />
                   </div>
                   <div class="gridAdvertsiment__container-image _right">
-                    <img src="./images/advertising/2.png" alt="">
+                    <img src="./images/advertising/2.png" alt="" />
                   </div>
                 </div>
               </div>
               <div class="gridAdvertsiment__box">
-                <button class="button button--primary">
-                  <span class="text">
-                    Minting Now
-                  </span>
+                <button class="button button--primary" data-toggle="minting">
+                  <span class="text"> Minting Now </span>
                 </button>
-                <button class="button button--border">
+                <button class="button button--border" data-toggle="upcoming">
                   Upcoming Drops
                 </button>
               </div>
             </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+            <div class="grid__inner-row collapse active" id="minting">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
-                </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
-              </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gridItem">
-              <div class="gridItem__image">
-                <div class="ratioImage ratioImage--contain">
-                  <img src="./images/grid-image.png" alt="">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
                 </div>
-                <h6 class="gridItem__image-info _sm">
-                  MINTING
-                </h6>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="gridItem__info">
-                <h5 class="gridItem__info-title">
-                  CryptoCommas
-                </h5>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Chain: Polygon
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Supply: 999
-                </h6>
-                <h6 class="gridItem__info-subtitle _sm">
-                  Price: 9 MATIC
-                </h6>
-                <p class="gridItem__info-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                  lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                  eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Nullam non ornare eros.
-                </p>
-                <button class="button button--secondary">
-                  <span class="text">
-                    Mint Here
-                  </span>
-                </button>
-                <div class="gridItem__info-box">
-                  <a href="#" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/globus.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/discord.png" alt="">
-                    </span>
-                  </a>
-                  <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                    <span class="ico">
-                      <img src="./images/icons/twitter.png" alt="">
-                    </span>
-                  </a>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="grid__inner-row collapse" id="upcoming">
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="gridItem">
+                <div class="gridItem__image">
+                  <div class="ratioImage ratioImage--contain">
+                    <img src="./images/grid-image.png" alt="" />
+                  </div>
+                  <h6 class="gridItem__image-info _sm">MINTING</h6>
+                </div>
+                <div class="gridItem__info">
+                  <h5 class="gridItem__info-title">CryptoCommas</h5>
+                  <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                  <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                  <p class="gridItem__info-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                    bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    non ornare eros. Ut pharetra ornare lorem, sit amet bibendum
+                    quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Nullam non ornare eros.
+                  </p>
+                  <button class="button button--secondary">
+                    <span class="text"> Mint Here </span>
+                  </button>
+                  <div class="gridItem__info-box">
+                    <a href="#" class="button button--ico">
+                      <span class="ico">
+                        <img src="./images/icons/globus.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://discord.gg/vuCGBHMEZG"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/discord.png" alt="" />
+                      </span>
+                    </a>
+                    <a
+                      href="https://twitter.com/AP3ST3RNFT"
+                      class="button button--ico"
+                    >
+                      <span class="ico">
+                        <img src="./images/icons/twitter.png" alt="" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="button button--text _lg"
+              id="loade-more"
+              type="button"
+            >
+              Load More
+            </button>
           </div>
-          <button class="button button--text _lg">
-            Load More
-          </button>
+        </div>
+      </section>
+      <div class="spinner__outer" id="loader">
+        <div class="spinner">
+          <div></div>
+          <div></div>
         </div>
       </div>
-    </section>
-    <!-- #grid end -->
-    <!-- #footer -->
-    <footer class="footer">
-      <div class="autoContainer">
-        <div class="footer__inner">
-          <p class="footer__inner-copy">
-            © 2023 MintCaster.xyz. All rights reserved
-          </p>
-          <div class="footer__inner-group">
-            <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico _lg">
-              <span class="ico">
-                <img src="./images/icons/twitter-2.png" alt="">
-              </span>
-            </a>
-            <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico _lg">
-              <span class="ico">
-                <img src="./images/icons/discord-2.png" alt="">
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- #footer end -->
-
-    <!-- #popUp end -->
-    <section class="popUp">
-      <div class="popUp__inner">
-        <div class="popUp__inner-item">
-          <div class="gridItem _modal">
-            <div class="gridItem__image">
-              <div class="ratioImage ratioImage--contain">
-                <img src="./images/pop-up.png" alt="">
-              </div>
-              <div class="gridItem__image-date">
-                <span class="date date--day">
-                  07d
+      <!-- #grid end -->
+      <!-- #footer -->
+      <footer class="footer">
+        <div class="autoContainer">
+          <div class="footer__inner">
+            <p class="footer__inner-copy">
+              © 2023 MintCaster.xyz. All rights reserved
+            </p>
+            <div class="footer__inner-group">
+              <a
+                href="https://twitter.com/AP3ST3RNFT"
+                class="button button--ico _lg"
+              >
+                <span class="ico">
+                  <img src="./images/icons/twitter-2.png" alt="" />
                 </span>
-                <span class="date date--hour">
-                  19h
+              </a>
+              <a
+                href="https://discord.gg/vuCGBHMEZG"
+                class="button button--ico _lg"
+              >
+                <span class="ico">
+                  <img src="./images/icons/discord-2.png" alt="" />
                 </span>
-                <span class="date date--minutes">
-                  53m
-                </span>
-              </div>
-              <div class="close">
-              </div>
-            </div>
-            <div class="gridItem__info">
-              <h5 class="gridItem__info-title">
-                CryptoCommas
-              </h5>
-              <h6 class="gridItem__info-subtitle _sm">
-                Chain: Polygon
-              </h6>
-              <h6 class="gridItem__info-subtitle _sm">
-                Supply: 999
-              </h6>
-              <h6 class="gridItem__info-subtitle _sm">
-                Price: 9 MATIC
-              </h6>
-              <p class="gridItem__info-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare eros. Ut pharetra ornare
-                lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nullam non ornare eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non ornare
-                eros. Ut pharetra ornare lorem, sit amet bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Nullam non ornare eros.
-              </p>
-              <button class="button button--secondary">
-                <span class="text">
-                  Mint Here
-                </span>
-              </button>
-              <div class="gridItem__info-box">
-                <a href="#" class="button button--ico">
-                  <span class="ico">
-                    <img src="./images/icons/globus.png" alt="">
-                  </span>
-                </a>
-                <a href="https://discord.gg/vuCGBHMEZG" class="button button--ico">
-                  <span class="ico">
-                    <img src="./images/icons/discord.png" alt="">
-                  </span>
-                </a>
-                <a href="https://twitter.com/AP3ST3RNFT" class="button button--ico">
-                  <span class="ico">
-                    <img src="./images/icons/twitter.png" alt="">
-                  </span>
-                </a>
-              </div>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- #popUp end -->
+      </footer>
+      <!-- #footer end -->
 
-  </div>
-  <script src="js/main.js"></script>
-</body>
-
+      <!-- #popUp end -->
+      <section class="popUp" id="popup">
+        <div class="popUp__inner">
+          <div class="popUp__inner-item" id="popupContent">
+            <!-- <div class="gridItem _modal">
+              <div class="gridItem__image">
+                <div class="ratioImage ratioImage--contain">
+                  <img src="./images/pop-up.png" alt="" />
+                </div>
+                <div class="gridItem__image-date">
+                  <span class="date date--day"> 07d </span>
+                  <span class="date date--hour"> 19h </span>
+                  <span class="date date--minutes"> 53m </span>
+                </div>
+                <div class="close"></div>
+              </div>
+              <div class="gridItem__info">
+                <h5 class="gridItem__info-title">CryptoCommas</h5>
+                <h6 class="gridItem__info-subtitle _sm">Chain: Polygon</h6>
+                <h6 class="gridItem__info-subtitle _sm">Supply: 999</h6>
+                <h6 class="gridItem__info-subtitle _sm">Price: 9 MATIC</h6>
+                <p class="gridItem__info-text _full">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam non ornare eros. Ut pharetra ornare lorem, sit amet
+                  bibendum quam imperdiet ut. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Nullam non ornare eros.Lorem
+                  ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+                  ornare eros. Ut pharetra ornare lorem, sit amet bibendum quam
+                  imperdiet ut. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Nullam non ornare eros.
+                </p>
+                <button class="button button--secondary">
+                  <span class="text"> Mint Here </span>
+                </button>
+                <div class="gridItem__info-box">
+                  <a href="#" class="button button--ico">
+                    <span class="ico">
+                      <img src="./images/icons/globus.png" alt="" />
+                    </span>
+                  </a>
+                  <a
+                    href="https://discord.gg/vuCGBHMEZG"
+                    class="button button--ico"
+                  >
+                    <span class="ico">
+                      <img src="./images/icons/discord.png" alt="" />
+                    </span>
+                  </a>
+                  <a
+                    href="https://twitter.com/AP3ST3RNFT"
+                    class="button button--ico"
+                  >
+                    <span class="ico">
+                      <img src="./images/icons/twitter.png" alt="" />
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- #popUp end -->
+    </div>
+    <script src="js/luxon.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dom-loader.js"></script>
+  </body>
 </html>
