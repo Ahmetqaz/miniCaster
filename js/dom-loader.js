@@ -215,7 +215,7 @@ function DomController({ data, loadBy }) {
     loadMore.onclick = () => {
       const children = activeTab.querySelectorAll(".gridItem");
       let n = children.length + loadBy;
-    //   console.log("n is ", n);
+      //   console.log("n is ", n);
       cards.appendCards(
         activeTab,
         [...this.minting].splice(children.length, loadBy)
@@ -236,7 +236,9 @@ const initAll = () => {
     wrapper.style.display = "";
     loader.style.display = "none";
   };
-  fetch("/data/events.json")
+  // let url = "/data/events.json";
+  let url = "https://preview2-chi.vercel.app/data/events.json";
+  fetch(url)
     .then((response) => response.json())
     .then(onFetch);
 };
