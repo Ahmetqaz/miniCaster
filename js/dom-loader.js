@@ -46,7 +46,7 @@ function CardsController() {
         ? date.diff(DateTime.now(), ["days", "hours", "minutes"]).toObject()
         : null;
 
-    imgWrapper.innerHTML += `<div class="ratioImage ratioImage--contain"><img src="${url}" alt=""></div>`;
+    imgWrapper.innerHTML += `<div class="ratioImage"><img src="${url}" alt=""></div>`;
     if (!diff)
       imgWrapper.innerHTML += `<h6 class="gridItem__image-info _sm">${info}</h6>`;
     else
@@ -113,7 +113,7 @@ function CardsController() {
     </span>
     </a>`;
     info.querySelector(".gridItem__info-title").onclick = () => onClick();
-    info.append(links, button);
+    info.append(button,links);
     wrapper.append(info);
   };
   this.createPopupCard = (data) => {

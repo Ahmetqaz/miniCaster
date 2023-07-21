@@ -515,7 +515,7 @@ svg {
 .button--ico {
   padding: unset;
   position: relative;
-  height: 14px;
+  height: 20px;
 }
 .button--ico .ico {
   height: 100%;
@@ -526,7 +526,7 @@ svg {
      object-fit: contain;
 }
 .button--ico._lg {
-  height: 18px;
+  height: 22px;
 }
 .button--ico:hover {
   opacity: 0.8;
@@ -670,11 +670,14 @@ svg {
   border-top: unset;
   -webkit-transition: max-height 0.3s ease, border-color 0s ease 0.3s, opacity 0.1s ease 0.2s;
   transition: max-height 0.3s ease, border-color 0s ease 0.3s, opacity 0.1s ease 0.2s;
-  scrollbar-width: none; /* Firefox 64 */
-  -ms-overflow-style: none; /* Internet Explorer 11 */
+  scrollbar-width: none;
+  /* Firefox 64 */
+  -ms-overflow-style: none;
+  /* Internet Explorer 11 */
   z-index: 1;
 }
-.input--select .input__dropdown::-webkit-scrollbar { /** WebKit */
+.input--select .input__dropdown::-webkit-scrollbar {
+  /** WebKit */
   display: none;
 }
 .input--select .input__dropdown-item {
@@ -1353,8 +1356,18 @@ svg {
 }
 .gridItem__image {
   position: relative;
-  padding: 10px;
-  background: #969696;
+  cursor: pointer;
+}
+.gridItem__image .ratioImage {
+  overflow: hidden;
+}
+.gridItem__image .ratioImage img {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.gridItem__image .ratioImage:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .gridItem__image-date {
   position: absolute;
@@ -1381,7 +1394,7 @@ svg {
   bottom: 0;
 }
 .gridItem__info {
-  padding: 10px 26px;
+  padding: 10px 26px 15px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1393,7 +1406,7 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 13px;
+  gap: 8px;
 }
 .gridItem__info-box {
   display: -webkit-box;
@@ -1406,12 +1419,19 @@ svg {
 }
 .gridItem__info-title {
   padding: 10px 0 5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.gridItem__info-title:hover {
+  color: #882bff !important;
 }
 .gridItem__info-subtitle {
   font-weight: 500;
 }
 .gridItem__info-text {
   line-height: 1.55em;
+  margin: 5px 0;
 }
 .gridItem__info-text:not(._full) {
   display: -webkit-box;
@@ -1420,18 +1440,15 @@ svg {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.gridItem__info .button--primary {
+.gridItem__info .button--secondary {
   min-width: 135px;
   font-weight: 800;
-  margin: 10px 0 5px;
+  margin: 5px 0 5px;
 }
 .gridItem._modal {
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
-}
-.gridItem._modal .gridItem__image {
-  background: #ff50a3;
 }
 .gridItem._modal .gridItem__image .close {
   width: 15px;
@@ -1468,7 +1485,6 @@ svg {
 }
 .gridItem._modal .gridItem__info {
   background: #fff;
-  padding: 10px 25px;
 }
 .gridItem._modal .gridItem__info-box {
   color: #090113;
@@ -1868,27 +1884,34 @@ svg {
   .autoContainer {
     padding: 0 30px;
   }
+
   .main {
     padding-top: 120px;
   }
+
   .button {
     font-size: 14px;
   }
+
   h2 {
     font-size: 40px;
   }
+
   h3 {
     font-size: 30px;
   }
+
   p._lg {
     font-size: 14px;
   }
+
   .header {
     padding: 20px 0;
   }
   .header__inner-logo {
     width: 190px;
   }
+
   .grid {
     font-size: 15px;
   }
@@ -1901,6 +1924,7 @@ svg {
   .gridAdvertsiment__box .button--border {
     font-size: 20px;
   }
+
   .price__inner-row {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1915,12 +1939,15 @@ svg {
   .autoContainer {
     padding: 0 25px;
   }
+
   h2 {
     font-size: 35px;
   }
+
   .main {
     padding-top: 90px;
   }
+
   .header__inner {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -1939,6 +1966,7 @@ svg {
   .header.sticky .header__inner-logo {
     width: 150px;
   }
+
   .nav {
     position: fixed;
     top: 0;
@@ -2022,6 +2050,7 @@ svg {
     -webkit-transform: translate(0);
             transform: translate(0);
   }
+
   .grid__inner-row {
     gap: 25px 15px;
     -ms-flex-pack: distribute;
@@ -2031,6 +2060,7 @@ svg {
     width: calc(50% - 10px);
     max-width: 390px;
   }
+
   .priceItem {
     width: calc(33.3% - 10px);
   }
@@ -2039,9 +2069,11 @@ svg {
   .autoContainer {
     padding: 0 15px;
   }
+
   .footer {
     padding: 30px 0;
   }
+
   .gridAdvertsiment__container-image {
     top: 0;
     -webkit-transform: unset;
@@ -2071,6 +2103,7 @@ svg {
   .gridAdvertsiment__box .button {
     font-size: 18px;
   }
+
   .price__inner-row {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -2087,12 +2120,15 @@ svg {
   .button {
     font-weight: 500;
   }
+
   h2 {
     font-size: 30px;
   }
+
   h3 {
     font-size: 25px;
   }
+
   .gridItem {
     width: calc(50% - 8px);
   }
@@ -2106,6 +2142,7 @@ svg {
   .gridAdvertsiment__box .button {
     font-size: 16px;
   }
+
   .price__inner-row {
     gap: 20px 15px;
   }
@@ -2120,15 +2157,18 @@ svg {
   ._hideMob {
     display: none;
   }
+
   .header__inner-logo {
     width: 130px;
   }
   .header.sticky .header__inner-logo {
     width: 100px;
   }
+
   .nav__inner {
     padding: 40px 20px;
   }
+
   .burger {
     width: 20px;
     height: 14px;
@@ -2143,6 +2183,7 @@ svg {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+
   .grid__inner {
     gap: 30px;
   }
@@ -2151,6 +2192,7 @@ svg {
     max-width: 450px;
     margin: 0 auto;
   }
+
   .price__inner {
     gap: 30px;
   }
@@ -2187,6 +2229,7 @@ svg {
             order: 1;
     text-align: center;
   }
+
   .grid {
     padding-bottom: 30px;
   }
@@ -2218,6 +2261,7 @@ svg {
   .gridItem._modal .gridItem__info {
     padding: 10px 15px;
   }
+
   .price {
     padding-bottom: 30px;
   }
