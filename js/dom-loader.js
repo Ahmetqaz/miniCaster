@@ -193,15 +193,22 @@ function DomController({ data, loadBy }) {
   this.featured = data.featured;
   this.minting = data.minting;
   this.upcoming = data.upcoming;
+  console.log("this.upcoming >> \n", this.upcoming);
 
   cards.updateCards(featuredWrapper, this.featured);
   cards.updateCards(mintingWrapper, [...this.minting].splice(0, loadBy));
-  cards.updateCards(upcomingWrapper, this.upcoming);
+  cards.updateCards(upcomingWrapper, [...this.upcoming].splice(0, loadBy));
 
   tabs.setUpdateLoadMore((id, activeTab) => {
     const checkAndDisableLoadMore = (childrenLength) => {
-      const children = activeTab.querySelectorAll(".gridItem");
+      const children = activeTab.querySelectorAll(".gridItem"); 
       let length = childrenLength ?? children.length;
+      console.log(
+        "setUpdateLoadMore >> ",
+        length >= this[id].length,
+        length,
+        this[id].length
+      );
       if (length >= this[id].length) {
         loadMore.style.display = "none";
         loadMore.onclick = null;
@@ -236,8 +243,7 @@ const initAll = () => {
     wrapper.style.display = "";
     loader.style.display = "none";
   };
-  // let url = "/data/events.json";
-  let url = "https://preview2-chi.vercel.app/data/events.json";
+  let url = "/data/events.json";
   fetch(url)
     .then((response) => response.json())
     .then(onFetch);
