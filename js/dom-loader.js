@@ -1,4 +1,5 @@
-const DATA_URL = "https://www.mintcaster.xyz/minicaster/data/events.json";
+const DATA_URL = "/data/events.json";
+// "https://www.mintcaster.xyz/minicaster/data/events.json";
 
 const wrapper = document.getElementById("wrapper");
 const loader = document.getElementById("loader");
@@ -26,7 +27,7 @@ function PopupController() {
   };
   this.fire = ({ innerElement, createInnerElement }) => {
     popupContent.innerHTML = "";
-    let innerNode = innerElement ?? createInnerElement();
+    let innerNode = createInnerElement();
     if (innerNode) popupContent.append(innerNode);
 
     const closeBtn = popupContent.querySelector(".close");
@@ -36,10 +37,10 @@ function PopupController() {
 }
 const popupController = new PopupController();
 
-function TimerController(date) {
+function TimerController(date, showOnce) {
   this.date = date;
   this.timeInterval = 30000; // ms
-  this.nextInterval = 0;
+  this.nextInterval = null;
 
   this.wrapper = document.createElement("div");
   this.dayElement = document.createElement("span");
@@ -50,7 +51,6 @@ function TimerController(date) {
   this.dayElement.className = "date date--day";
   this.hourElement.className = "date date--hour";
   this.minutesElement.className = "date date--minutes";
-  this.wrapper.append(this.dayElement, this.hourElement, this.minutesElement);
 
   this.setTime = (date) => {
     let diff =
@@ -65,13 +65,19 @@ function TimerController(date) {
   this.counter = (ms) => {
     if (ms >= this.nextInterval) {
       this.setTime(this.date);
-      this.nextInterval += this.timeInterval;
+      this.nextInterval = ms + this.timeInterval;
     }
 
     requestAnimationFrame(this.counter);
   };
-  requestAnimationFrame(this.counter);
 
+  if (!showOnce) requestAnimationFrame(this.counter);
+  else this.setTime(this.date);
+  this.wrapper.append(this.dayElement, this.hourElement, this.minutesElement);
+
+  // this.wrapper.prototype.startCounter = () => {
+  //   requestAnimationFrame(this.counter);
+  // };
   return this.wrapper;
 }
 
@@ -87,9 +93,10 @@ function CardsController() {
 
     if (mint.toLowerCase() === "minting")
       imgWrapper.innerHTML += `<h6 class="gridItem__image-info _sm">${mint.toUpperCase()}</h6>`;
-    else if (date && !date.invalid)
-      imgWrapper.append(new TimerController(date));
-    else {
+    else if (date && !date.invalid) {
+      let counter = new TimerController(date, isModal);
+      imgWrapper.appendChild(counter);
+    } else {
       imgWrapper.innerHTML += `<h6 class="gridItem__image-info _sm">${mint.toUpperCase()}</h6>`;
       console.log(!date, date.invalid, mint.toLowerCase() === "minting", mint);
     }
@@ -114,7 +121,6 @@ function CardsController() {
     wrapper.append(
       createImage({
         url: data.image,
-        info: data.listing.toUpperCase(),
         mint: data.mint,
         onClick,
         isModal,
@@ -154,6 +160,7 @@ function CardsController() {
   this.createPopupCard = (data) => {
     const gridItem = document.createElement("div");
     gridItem.className = "gridItem _modal";
+
     createCardContent({
       wrapper: gridItem,
       data,
