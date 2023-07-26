@@ -82,9 +82,8 @@
       }
       .button {
         &--secondary {
-          min-width: 135px;
           font-weight: 800;
-          margin: 5px 0 5px;
+          // margin: 5px 0 5px;
         }
       }
     }
@@ -163,6 +162,20 @@
             &-text {
               color: $black;
               text-align: justify;
+            }
+            .button {
+              &--bg {
+                border-color: $primary;
+                &::before {
+                  background-color: $primary;
+                  opacity: 0;
+                }
+                &:hover {
+                  &::before {
+                    opacity: 0.1;
+                  }
+                }
+              }
             }
           }
         }
@@ -465,6 +478,16 @@
   }
 }
 
+@mixin index-1160 {
+  .grid {
+    font-size: 20px;
+    &Item {
+      &__info {
+        padding: 15px;
+      }
+    }
+  }
+}
 @mixin index-1024 {
   .grid {
     font-size: 15px;
@@ -610,6 +633,9 @@
       width: 100%;
       max-width: 450px;
       margin: 0 auto;
+      &__info {
+        padding: 15px 20px;
+      }
     }
   }
   .price {

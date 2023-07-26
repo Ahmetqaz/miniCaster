@@ -2,8 +2,11 @@
 }
 @media (max-width: 1160px) {
   .autoContainer {
-    padding: 0 40px;
+    padding: 0 35px;
   }
+  @include components-1160;
+  @include header-1160;
+  @include index-1160;
 }
 @media (max-width: 1024px) {
   .autoContainer {
@@ -29,6 +32,7 @@
   .autoContainer {
     padding: 0 15px;
   }
+  @include components-768;
   @include footer-768;
   @include index-768;
 }
@@ -41,10 +45,14 @@
   ._hideMob {
     display: none;
   }
+  @include components-580;
   @include header-580;
   @include index-580;
 }
 @media (max-width: 460px) {
   @include footer-460;
   @include index-460;
+}
+@media (max-width: 390px) {
+  @include components-390;
 }
