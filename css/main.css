@@ -349,7 +349,7 @@ input::-webkit-inner-spin-button {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 1px;
 }
 
 /* Track */
@@ -359,7 +359,7 @@ input::-webkit-inner-spin-button {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
+  background: #882bff;
   border-radius: 10px;
 }
 
