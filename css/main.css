@@ -557,6 +557,16 @@ svg {
 .button--border:hover::after {
   opacity: 0.3;
 }
+.button--bg {
+  padding: 0.9em 1.2em;
+  border-radius: 0.625em;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.button--bg.active {
+  color: #882bff;
+  background-color: #fff;
+}
 .button:active {
   opacity: 0.7;
 }
