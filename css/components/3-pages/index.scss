@@ -15,6 +15,13 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+    }
     &-row {
       display: flex;
       flex-wrap: wrap;
@@ -82,9 +89,8 @@
       }
       .button {
         &--secondary {
-          min-width: 135px;
           font-weight: 800;
-          margin: 5px 0 5px;
+          // margin: 5px 0 5px;
         }
       }
     }
@@ -163,6 +169,21 @@
             &-text {
               color: $black;
               text-align: justify;
+            }
+            .button {
+              &--bg {
+                display: none;
+                border-color: $primary;
+                &::before {
+                  background-color: $primary;
+                  opacity: 0;
+                }
+                &:hover {
+                  &::before {
+                    opacity: 0.1;
+                  }
+                }
+              }
             }
           }
         }
@@ -255,6 +276,11 @@
   h3 {
     text-align: center;
   }
+}
+.anchor {
+  position: relative;
+  top: -80px;
+  margin: -20px 0;
 }
 .popUp {
   display: none;
@@ -465,6 +491,16 @@
   }
 }
 
+@mixin index-1160 {
+  .grid {
+    font-size: 20px;
+    &Item {
+      &__info {
+        padding: 15px;
+      }
+    }
+  }
+}
 @mixin index-1024 {
   .grid {
     font-size: 15px;
@@ -605,11 +641,17 @@
   .grid {
     &__inner {
       gap: 30px;
+      &-wrapper {
+        gap: 30px;
+      }
     }
     &Item {
       width: 100%;
       max-width: 450px;
       margin: 0 auto;
+      &__info {
+        padding: 15px 20px;
+      }
     }
   }
   .price {
@@ -631,6 +673,10 @@
         }
       }
     }
+  }
+  .anchor{
+    margin: -15px 0;
+    top: -60px;
   }
 }
 @mixin index-460 {

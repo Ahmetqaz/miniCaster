@@ -110,14 +110,15 @@ function CardsController() {
     const info = document.createElement("div");
     const links = document.createElement("div");
     const button = document.createElement("a");
+    const buttonGroup = document.createElement("div");
 
+    buttonGroup.className = "button__group";
     info.className = "gridItem__info";
     links.className = "gridItem__info-box";
 
     button.className = "button button--secondary";
     button.innerHTML += `<span class="text">${data.button}</span>`;
     button.href = data.link;
-
     wrapper.append(
       createImage({
         url: data.image,
@@ -153,8 +154,9 @@ function CardsController() {
         <img src="./images/icons/twitter.png" alt="">
     </span>
     </a>`;
+    buttonGroup.innerHTML += `<a href=${data.link} class="button button--secondary"><span class="text">${data.button}</span></a>  <button class="button button--bg _fiil"><span>Read More</span></button>`;
     info.querySelector(".gridItem__info-title").onclick = () => onClick();
-    info.append(button, links);
+    info.append(buttonGroup, links);
     wrapper.append(info);
   };
   this.createPopupCard = (data) => {

@@ -127,6 +127,14 @@
   }
 }
 
+@mixin header-1160 {
+  .nav {
+    .button {
+      font-size: 14px;
+    }
+  }
+}
+
 @mixin header-1024 {
   .header {
     padding: 20px 0;
@@ -148,7 +156,7 @@
         display: block;
         z-index: 2;
       }
-      .button{
+      .button {
         width: 100%;
       }
     }
@@ -175,13 +183,12 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0s ease 0.25s, opacity 0.2s ease-in-out 0s;
-
     &__inner {
       position: absolute;
       top: 0;
       left: 0;
-      width: 27%;
-      min-width: 240px;
+      width: 30%;
+      min-width: 254px;
       height: 100%;
       flex-direction: column;
       align-items: flex-start;
@@ -210,7 +217,6 @@
         }
       }
     }
-
     &.active {
       pointer-events: all;
       transform: translate(0);
@@ -222,6 +228,9 @@
         transition: 0.3s ease-in-out 0.05s;
         transform: translate(0);
       }
+    }
+    .button {
+      font-size: 16px;
     }
   }
 }

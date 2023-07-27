@@ -25,6 +25,7 @@
   line-height: 1;
   transition: all 0.3s ease;
   font-family: $font-primary;
+  text-align: center;
 
   &--primary {
     background: $gradient-1;
@@ -39,12 +40,13 @@
   }
   &--secondary {
     font-size: 14px;
-    border-radius: 1.28em;
+    border-radius: 0.625em;
     padding: 0.74em 1.5em;
     position: relative;
     background-size: 200% 100%;
     background-position: 50%;
     background: $gradient-2;
+    min-width: 135px;
     .text {
       position: relative;
       z-index: 2;
@@ -60,6 +62,7 @@
       transition: all 0.3s ease;
       border-radius: inherit;
       opacity: 0;
+      pointer-events: none;
     }
     &:hover {
       opacity: 0.8;
@@ -134,13 +137,68 @@
       }
     }
   }
-
+  &--bg {
+    font-size: 14px;
+    padding: 0.9em 1.2em;
+    border-radius: 0.625em;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    font-weight: 800 !important;
+    span{
+      position: relative;
+      z-index: 2;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: inherit;
+      background: $white;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      pointer-events: none;
+    }
+    &.active {
+      color: $primary;
+      &::before {
+        opacity: 1;
+      }
+    }
+    &._fiil {
+      color: $primary;
+      &::before {
+        opacity: 1;
+      }
+    }
+    &:hover {
+      border-color: $primary;
+      &::before {
+        background-color: $primary;
+        opacity: 0.25;
+      }
+    }
+  }
   &:active {
     opacity: 0.7;
   }
   &:disabled {
     cursor: default;
     opacity: 0.5 !important;
+  }
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 15px 10px;
+    // flex-wrap: wrap;
+    width: 100%;
+    margin: 5px 0;
+    .button {
+      white-space: nowrap;
+    }
   }
 }
 .input {
@@ -650,21 +708,74 @@
   }
 }
 
+@mixin components-1160 {
+  .button {
+    &--secondary {
+      padding: 0.7em 1em;
+      min-width: 110px;
+    }
+  }
+}
 @mixin components-1024 {
   .main {
     padding-top: 120px;
   }
   .button {
     font-size: 14px;
+    &__group {
+      flex-direction: column;
+      gap: 12px;
+      max-width: 140px;
+      margin: 0 auto;
+    }
   }
 }
 @mixin components-940 {
   .main {
     padding-top: 90px;
   }
+  .button {
+    &__group {
+      flex-direction: row;
+      max-width: unset;
+      gap: 10px;
+    }
+  }
+}
+@mixin components-768 {
+  .button {
+    &__group {
+      // flex-direction: column;
+    }
+  }
 }
 @mixin components-650 {
   .button {
     font-weight: 500;
+    &__group {
+      flex-direction: column;
+      max-width: 140px;
+      gap: 12px;
+    }
+  }
+}
+@mixin components-580{
+  .button {
+    &__group {
+      max-width: unset;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+}
+@mixin components-390 {
+  .button {
+    font-weight: 500;
+    &__group {
+      flex-direction: column;
+      gap: 12px;
+      max-width: 140px;
+    }
   }
 }
