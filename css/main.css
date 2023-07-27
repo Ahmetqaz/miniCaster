@@ -1406,6 +1406,19 @@ svg {
           align-items: center;
   gap: 40px;
 }
+.grid__inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
 .grid__inner-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2319,6 +2332,9 @@ svg {
   }
 
   .grid__inner {
+    gap: 30px;
+  }
+  .grid__inner-wrapper {
     gap: 30px;
   }
   .gridItem {
