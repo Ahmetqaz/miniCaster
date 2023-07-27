@@ -165,6 +165,7 @@
             }
             .button {
               &--bg {
+                display: none;
                 border-color: $primary;
                 &::before {
                   background-color: $primary;

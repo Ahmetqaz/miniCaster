@@ -1569,6 +1569,7 @@ svg {
   text-align: justify;
 }
 .gridItem._modal .gridItem__info .button--bg {
+  display: none;
   border-color: #882bff;
 }
 .gridItem._modal .gridItem__info .button--bg::before {
