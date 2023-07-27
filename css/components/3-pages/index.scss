@@ -20,6 +20,7 @@
       flex-direction: column;
       align-items: center;
       gap: 40px;
+      position: relative;
     }
     &-row {
       display: flex;
@@ -275,6 +276,11 @@
   h3 {
     text-align: center;
   }
+}
+.anchor {
+  position: relative;
+  top: -80px;
+  margin: -20px 0;
 }
 .popUp {
   display: none;
@@ -667,6 +673,10 @@
         }
       }
     }
+  }
+  .anchor{
+    margin: -15px 0;
+    top: -60px;
   }
 }
 @mixin index-460 {

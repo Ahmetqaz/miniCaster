@@ -1418,6 +1418,7 @@ svg {
       -ms-flex-align: center;
           align-items: center;
   gap: 40px;
+  position: relative;
 }
 .grid__inner-row {
   display: -webkit-box;
@@ -1702,6 +1703,12 @@ svg {
 }
 .grid h3 {
   text-align: center;
+}
+
+.anchor {
+  position: relative;
+  top: -80px;
+  margin: -20px 0;
 }
 
 .popUp {
@@ -2357,6 +2364,11 @@ svg {
   }
   .priceItem .list__item {
     padding: 10px 5px;
+  }
+
+  .anchor {
+    margin: -15px 0;
+    top: -60px;
   }
 }
 @media (max-width: 460px) {
