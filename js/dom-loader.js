@@ -136,9 +136,9 @@ function CardsController() {
       data.description
     }</p>`;
 
-    if (data.website)
+    if (data.link)
       links.innerHTML += `
-    <a href="${data.websit}" class="button button--ico">
+    <a href="${data.link}" class="button button--ico">
         <span class="ico"><img src="./images/icons/globus.png" alt=""></span>
     </a>`;
     if (data.discord)
