@@ -89,7 +89,7 @@ function CardsController() {
       ? DateTime.fromFormat(mint, "MMMM dd, yyyy - hh.mm a")
       : null;
 
-    imgWrapper.innerHTML += `<div class="ratioImage"><img src="${url}" alt=""></div>`;
+    imgWrapper.innerHTML += `<div class="ratioImage"><img src="../${url}" alt=""></div>`;
 
     if (mint.toLowerCase() === "minting")
       imgWrapper.innerHTML += `<h6 class="gridItem__image-info _sm">${mint.toUpperCase()}</h6>`;
@@ -145,18 +145,18 @@ function CardsController() {
     if (data.link)
       links.innerHTML += `
     <a href="${data.link}" class="button button--ico">
-        <span class="ico"><img src="./images/icons/globus.png" alt=""></span>
+        <span class="ico"><img src="../images/icons/globus.png" alt=""></span>
     </a>`;
     if (data.discord)
       links.innerHTML += `
     <a href="${data.discord}" class="button button--ico">
-    <span class="ico"><img src="./images/icons/discord.png" alt=""></span>
+    <span class="ico"><img src="../images/icons/discord.png" alt=""></span>
     </a>`;
     if (data.twitter)
       links.innerHTML += `
     <a href="${data.twitter}" class="button button--ico">
     <span class="ico">
-        <img src="./images/icons/twitter.png" alt="">
+        <img src="../images/icons/twitter.png" alt="">
     </span>
     </a>`;
     info.querySelector(".gridItem__info-title").onclick = () => onClick();
