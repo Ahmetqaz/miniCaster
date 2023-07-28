@@ -241,25 +241,6 @@ function DomController({ data, loadBy }) {
   const upcomingWrapper = document.getElementById("upcoming");
   const freeWrapper = document.getElementById("free");
   const loadMore = document.getElementById("loade-more");
-
-  this.featured = data.featured;
-  this.minting = data.minting;
-  this.free = data.free;
-  this.upcoming = data.upcoming.sort((a, b) => {
-    let aMint = DateTime.fromFormat(a.mint, "MMMM dd, yyyy - hh.mm a");
-    let bMint = DateTime.fromFormat(b.mint, "MMMM dd, yyyy - hh.mm a");
-
-    if (aMint && bMint) {
-      return aMint.ts - bMint.ts;
-    }
-    return undefined;
-  });
-
-  cards.updateCards(featuredWrapper, this.featured);
-  cards.updateCards(mintingWrapper, [...this.minting].splice(0, loadBy));
-  cards.updateCards(upcomingWrapper, [...this.upcoming].splice(0, loadBy));
-  cards.updateCards(freeWrapper, [...this.free].splice(0, loadBy));
-
   const setLoadMore = (activeTab, id) => {
     let loadMore = activeTab.parentElement.querySelector(
       '[data-event="load-more"]'
@@ -275,10 +256,35 @@ function DomController({ data, loadBy }) {
     };
   };
 
-  setLoadMore(mintingWrapper, "minting");
-  setLoadMore(upcomingWrapper, "upcoming");
-  setLoadMore(freeWrapper, "free");
+  if (featuredWrapper) {
+    this.featured = data.featured;
+    cards.updateCards(featuredWrapper, this.featured);
+  }
+  if (mintingWrapper) {
+    this.minting = data.minting;
+    cards.updateCards(mintingWrapper, [...this.minting].splice(0, loadBy));
+    setLoadMore(mintingWrapper, "minting");
+  }
+  if (upcomingWrapper) {
+    this.upcoming = data.upcoming.sort((a, b) => {
+      let aMint = DateTime.fromFormat(a.mint, "MMMM dd, yyyy - hh.mm a");
+      let bMint = DateTime.fromFormat(b.mint, "MMMM dd, yyyy - hh.mm a");
 
+      if (aMint && bMint) {
+        return aMint.ts - bMint.ts;
+      }
+      return undefined;
+    });
+    cards.updateCards(upcomingWrapper, [...this.upcoming].splice(0, loadBy));
+    setLoadMore(upcomingWrapper, "upcoming");
+  }
+  if (freeWrapper) {
+    this.free = data.free;
+    cards.updateCards(freeWrapper, [...this.free].splice(0, loadBy));
+    setLoadMore(freeWrapper, "free");
+  }
+
+ 
   // tabs.setUpdateLoadMore((id, activeTab) => {
   //   const checkAndDisableLoadMore = (childrenLength) => {
   //     const children = activeTab.querySelectorAll(".gridItem");
