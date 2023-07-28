@@ -245,7 +245,18 @@ function DomController({ data, loadBy }) {
     let loadMore = activeTab.parentElement.querySelector(
       '[data-event="load-more"]'
     );
-    if (!loadMore) return;
+    const checkLoadMore = (n) => {
+      const children = activeTab.querySelectorAll(".gridItem");
+      const childrenLength = n ?? children.length;
+      if (childrenLength >= this[id].length) {
+        loadMore.style.display = "none";
+        loadMore.onclick = null;
+        return false;
+      }
+      return true;
+    };
+    if (!loadMore || !checkLoadMore()) return;
+
     loadMore.onclick = () => {
       const children = activeTab.querySelectorAll(".gridItem");
       let n = children.length + loadBy;
@@ -286,7 +297,6 @@ function DomController({ data, loadBy }) {
 
   if (document.querySelector(".collapse"))
     tabs.setUpdateLoadMore((id, activeTab) => {
-      console.log("activeTab", activeTab);
       const checkAndDisableLoadMore = (childrenLength) => {
         const children = activeTab.querySelectorAll(".gridItem");
         let length = childrenLength ?? children.length;
