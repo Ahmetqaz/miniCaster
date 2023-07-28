@@ -202,39 +202,39 @@ function CardsController() {
     this.appendCards(wrapper, dataList);
   };
 }
-// function TabsController() {
-//   const tabEvents = document.querySelectorAll("[data-toggle]");
-//   const tabs = document.querySelectorAll(".collapse");
+function TabsController() {
+  const tabEvents = document.querySelectorAll("[data-toggle]");
+  const tabs = document.querySelectorAll(".collapse");
 
-//   this.updateLoadMore = () => {};
+  this.updateLoadMore = () => {};
 
-//   const setActiveTab = (id) => {
-//     let activeTab = null;
-//     tabEvents.forEach((button) => {
-//       let tabId = button.dataset.toggle;
-//       button.className =
-//         tabId === id ? "button button--primary" : "button button--border";
-//     });
-//     tabs.forEach((tab) => {
-//       tab.classList.toggle("active", tab.id === id);
-//       activeTab = tab.id === id ? tab : activeTab;
-//     });
-//     this.updateLoadMore(id, activeTab);
-//   };
+  const setActiveTab = (id) => {
+    let activeTab = null;
+    tabEvents.forEach((button) => {
+      let tabId = button.dataset.toggle;
+      button.className =
+        tabId === id ? "button button--primary" : "button button--border";
+    });
+    tabs.forEach((tab) => {
+      tab.classList.toggle("active", tab.id === id);
+      activeTab = tab.id === id ? tab : activeTab;
+    });
+    this.updateLoadMore(id, activeTab);
+  };
 
-//   this.setUpdateLoadMore = (callback) => {
-//     this.updateLoadMore = callback;
-//     setActiveTab(tabEvents[0].dataset.toggle, tabs[0]);
-//   };
+  this.setUpdateLoadMore = (callback) => {
+    this.updateLoadMore = callback;
+    setActiveTab(tabEvents[0].dataset.toggle, tabs[0]);
+  };
 
-//   tabEvents.forEach((button) => {
-//     button.onclick = () => setActiveTab(button.dataset.toggle);
-//   });
-// }
+  tabEvents.forEach((button) => {
+    button.onclick = () => setActiveTab(button.dataset.toggle);
+  });
+}
 
 function DomController({ data, loadBy }) {
   const cards = new CardsController();
-  // const tabs = new TabsController();
+  const tabs = new TabsController();
 
   const featuredWrapper = document.getElementById("featured");
   const mintingWrapper = document.getElementById("minting");
@@ -245,7 +245,7 @@ function DomController({ data, loadBy }) {
     let loadMore = activeTab.parentElement.querySelector(
       '[data-event="load-more"]'
     );
-
+    if (!loadMore) return;
     loadMore.onclick = () => {
       const children = activeTab.querySelectorAll(".gridItem");
       let n = children.length + loadBy;
@@ -284,32 +284,33 @@ function DomController({ data, loadBy }) {
     setLoadMore(freeWrapper, "free");
   }
 
- 
-  // tabs.setUpdateLoadMore((id, activeTab) => {
-  //   const checkAndDisableLoadMore = (childrenLength) => {
-  //     const children = activeTab.querySelectorAll(".gridItem");
-  //     let length = childrenLength ?? children.length;
+  if (document.querySelector(".collapse"))
+    tabs.setUpdateLoadMore((id, activeTab) => {
+      console.log("activeTab", activeTab);
+      const checkAndDisableLoadMore = (childrenLength) => {
+        const children = activeTab.querySelectorAll(".gridItem");
+        let length = childrenLength ?? children.length;
 
-  //     if (length >= this[id].length) {
-  //       loadMore.style.display = "none";
-  //       loadMore.onclick = null;
-  //       return false;
-  //     }
-  //     return true;
-  //   };
+        if (length >= this[id].length) {
+          loadMore.style.display = "none";
+          loadMore.onclick = null;
+          return false;
+        }
+        return true;
+      };
 
-  //   if (!checkAndDisableLoadMore()) return;
-  //   loadMore.style.display = "";
-  //   loadMore.onclick = () => {
-  //     const children = activeTab.querySelectorAll(".gridItem");
-  //     let n = children.length + loadBy;
-  //     cards.appendCards(
-  //       activeTab,
-  //       [...this[id]].splice(children.length, loadBy)
-  //     );
-  //     checkAndDisableLoadMore(n);
-  //   };
-  // });
+      if (!checkAndDisableLoadMore()) return;
+      loadMore.style.display = "";
+      loadMore.onclick = () => {
+        const children = activeTab.querySelectorAll(".gridItem");
+        let n = children.length + loadBy;
+        cards.appendCards(
+          activeTab,
+          [...this[id]].splice(children.length, loadBy)
+        );
+        checkAndDisableLoadMore(n);
+      };
+    });
 }
 
 const initAll = () => {
