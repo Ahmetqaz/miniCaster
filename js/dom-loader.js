@@ -109,16 +109,21 @@ function CardsController() {
   const createCardContent = ({ wrapper, data, onClick, isModal }) => {
     const info = document.createElement("div");
     const links = document.createElement("div");
-    const button = document.createElement("a");
+    const buttonWhiteList = document.createElement("a");
+    const buttonReadMore = document.createElement("button");
     const buttonGroup = document.createElement("div");
 
     buttonGroup.className = "button__group";
     info.className = "gridItem__info";
     links.className = "gridItem__info-box";
 
-    button.className = "button button--secondary";
-    button.innerHTML += `<span class="text">${data.button}</span>`;
-    button.href = data.link;
+    buttonWhiteList.className = "button button--secondary";
+    buttonWhiteList.innerHTML += `<span class="text">${data.button}</span>`;
+    buttonWhiteList.href = data.link;
+
+    buttonReadMore.className = "button button--bg _fiil";
+    buttonReadMore.innerHTML += `<span class="text">Read More</span>`;
+
     wrapper.append(
       createImage({
         url: data.image,
@@ -154,8 +159,10 @@ function CardsController() {
         <img src="./images/icons/twitter.png" alt="">
     </span>
     </a>`;
-    buttonGroup.innerHTML += `<a href=${data.link} class="button button--secondary"><span class="text">${data.button}</span></a>  <button class="button button--bg _fiil"><span>Read More</span></button>`;
     info.querySelector(".gridItem__info-title").onclick = () => onClick();
+    buttonReadMore.onclick = () => onClick();
+
+    buttonGroup.append(buttonWhiteList, buttonReadMore);
     info.append(buttonGroup, links);
     wrapper.append(info);
   };
@@ -195,47 +202,49 @@ function CardsController() {
     this.appendCards(wrapper, dataList);
   };
 }
-function TabsController() {
-  const tabEvents = document.querySelectorAll("[data-toggle]");
-  const tabs = document.querySelectorAll(".collapse");
+// function TabsController() {
+//   const tabEvents = document.querySelectorAll("[data-toggle]");
+//   const tabs = document.querySelectorAll(".collapse");
 
-  this.updateLoadMore = () => {};
+//   this.updateLoadMore = () => {};
 
-  const setActiveTab = (id) => {
-    let activeTab = null;
-    tabEvents.forEach((button) => {
-      let tabId = button.dataset.toggle;
-      button.className =
-        tabId === id ? "button button--primary" : "button button--border";
-    });
-    tabs.forEach((tab) => {
-      tab.classList.toggle("active", tab.id === id);
-      activeTab = tab.id === id ? tab : activeTab;
-    });
-    this.updateLoadMore(id, activeTab);
-  };
+//   const setActiveTab = (id) => {
+//     let activeTab = null;
+//     tabEvents.forEach((button) => {
+//       let tabId = button.dataset.toggle;
+//       button.className =
+//         tabId === id ? "button button--primary" : "button button--border";
+//     });
+//     tabs.forEach((tab) => {
+//       tab.classList.toggle("active", tab.id === id);
+//       activeTab = tab.id === id ? tab : activeTab;
+//     });
+//     this.updateLoadMore(id, activeTab);
+//   };
 
-  this.setUpdateLoadMore = (callback) => {
-    this.updateLoadMore = callback;
-    setActiveTab(tabEvents[0].dataset.toggle, tabs[0]);
-  };
+//   this.setUpdateLoadMore = (callback) => {
+//     this.updateLoadMore = callback;
+//     setActiveTab(tabEvents[0].dataset.toggle, tabs[0]);
+//   };
 
-  tabEvents.forEach((button) => {
-    button.onclick = () => setActiveTab(button.dataset.toggle);
-  });
-}
+//   tabEvents.forEach((button) => {
+//     button.onclick = () => setActiveTab(button.dataset.toggle);
+//   });
+// }
 
 function DomController({ data, loadBy }) {
   const cards = new CardsController();
-  const tabs = new TabsController();
+  // const tabs = new TabsController();
 
   const featuredWrapper = document.getElementById("featured");
   const mintingWrapper = document.getElementById("minting");
   const upcomingWrapper = document.getElementById("upcoming");
+  const freeWrapper = document.getElementById("free");
   const loadMore = document.getElementById("loade-more");
 
   this.featured = data.featured;
   this.minting = data.minting;
+  this.free = data.free;
   this.upcoming = data.upcoming.sort((a, b) => {
     let aMint = DateTime.fromFormat(a.mint, "MMMM dd, yyyy - hh.mm a");
     let bMint = DateTime.fromFormat(b.mint, "MMMM dd, yyyy - hh.mm a");
@@ -249,22 +258,13 @@ function DomController({ data, loadBy }) {
   cards.updateCards(featuredWrapper, this.featured);
   cards.updateCards(mintingWrapper, [...this.minting].splice(0, loadBy));
   cards.updateCards(upcomingWrapper, [...this.upcoming].splice(0, loadBy));
+  cards.updateCards(freeWrapper, [...this.free].splice(0, loadBy));
 
-  tabs.setUpdateLoadMore((id, activeTab) => {
-    const checkAndDisableLoadMore = (childrenLength) => {
-      const children = activeTab.querySelectorAll(".gridItem");
-      let length = childrenLength ?? children.length;
+  const setLoadMore = (activeTab, id) => {
+    let loadMore = activeTab.parentElement.querySelector(
+      '[data-event="load-more"]'
+    );
 
-      if (length >= this[id].length) {
-        loadMore.style.display = "none";
-        loadMore.onclick = null;
-        return false;
-      }
-      return true;
-    };
-
-    if (!checkAndDisableLoadMore()) return;
-    loadMore.style.display = "";
     loadMore.onclick = () => {
       const children = activeTab.querySelectorAll(".gridItem");
       let n = children.length + loadBy;
@@ -272,9 +272,38 @@ function DomController({ data, loadBy }) {
         activeTab,
         [...this[id]].splice(children.length, loadBy)
       );
-      checkAndDisableLoadMore(n);
     };
-  });
+  };
+
+  setLoadMore(mintingWrapper, "minting");
+  setLoadMore(upcomingWrapper, "upcoming");
+  setLoadMore(freeWrapper, "free");
+
+  // tabs.setUpdateLoadMore((id, activeTab) => {
+  //   const checkAndDisableLoadMore = (childrenLength) => {
+  //     const children = activeTab.querySelectorAll(".gridItem");
+  //     let length = childrenLength ?? children.length;
+
+  //     if (length >= this[id].length) {
+  //       loadMore.style.display = "none";
+  //       loadMore.onclick = null;
+  //       return false;
+  //     }
+  //     return true;
+  //   };
+
+  //   if (!checkAndDisableLoadMore()) return;
+  //   loadMore.style.display = "";
+  //   loadMore.onclick = () => {
+  //     const children = activeTab.querySelectorAll(".gridItem");
+  //     let n = children.length + loadBy;
+  //     cards.appendCards(
+  //       activeTab,
+  //       [...this[id]].splice(children.length, loadBy)
+  //     );
+  //     checkAndDisableLoadMore(n);
+  //   };
+  // });
 }
 
 const initAll = () => {
