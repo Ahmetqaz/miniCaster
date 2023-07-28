@@ -89,7 +89,7 @@ function CardsController() {
       ? DateTime.fromFormat(mint, "MMMM dd, yyyy - hh.mm a")
       : null;
 
-    imgWrapper.innerHTML += `<div class="ratioImage"><img src="../${url}" alt=""></div>`;
+    imgWrapper.innerHTML += `<div class="ratioImage"><img src="${url}" alt=""></div>`;
 
     if (mint.toLowerCase() === "minting")
       imgWrapper.innerHTML += `<h6 class="gridItem__image-info _sm">${mint.toUpperCase()}</h6>`;
